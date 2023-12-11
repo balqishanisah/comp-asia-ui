@@ -59,8 +59,6 @@ function App() {
     setOpen(false);
   };
 
-  console.log("selected", selectedValue);
-
   useEffect(() => {
     axios
       .get("http://localhost:3000/comps")
@@ -98,7 +96,28 @@ function App() {
               <ListItemAvatar>
                 <Avatar src={x?.imageUrl ?? "/static/images/avatar/3.jpg"} />
               </ListItemAvatar>
-              <ListItemText primary={x.name} />
+              <ListItemText
+                primary={
+                  <Typography component="div" display="flex" variant="inherit">
+                    <Typography
+                      component="span"
+                      className="text-xsTitle"
+                      variant="inherit"
+                      flex="1"
+                    >
+                      {x?.name}
+                    </Typography>
+                    <Typography
+                      component="span"
+                      variant="inherit"
+                      color="primary"
+                      className="text-icon text-desc"
+                    >
+                      {x?.orderTime ? x.orderTime.toLocaleString() : null}
+                    </Typography>
+                  </Typography>
+                }
+              />
             </ListItemButton>
           </ListItem>
         ))}
