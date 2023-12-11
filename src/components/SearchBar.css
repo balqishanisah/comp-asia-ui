@@ -1,0 +1,22 @@
+.input-wrapper {
+  width: 100%;
+  z-index: 100;
+  background-color: #fff;
+  border-radius: 10px;
+  height: 2.5rem;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  background-color: transparent;
+  height: 100%;
+  font-size: 1.25 rem;
+  width: 50%;
+  margin-left: 5px;
+}
+
+input:focus {
+  outline: none;
+}
